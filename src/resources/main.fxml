@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMain">
+   <children>
+      <AnchorPane layoutX="-11.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #18161B;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <AnchorPane id="paneTable" fx:id="paneDonnee" layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="800.0" style="-fx-background-color: #aea8a8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+               <children>
+                  <Label layoutX="161.0" layoutY="100.0" prefHeight="200.0" prefWidth="453.0" text="Veuillez sélectionner la table de données que vous souhaitez visualiser" textAlignment="CENTER" textFill="black" wrapText="true" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="120.0">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <GridPane prefHeight="49.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ToggleButton fx:id="departement" mnemonicParsing="false" onAction="#loadData" text="Département" GridPane.halignment="CENTER" />
+                  <ToggleButton fx:id="commune" mnemonicParsing="false" onAction="#loadData" text="Commune" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <ToggleButton fx:id="gare" mnemonicParsing="false" onAction="#loadData" text="Gare" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <ToggleButton fx:id="annee" mnemonicParsing="false" onAction="#loadData" text="Année" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                  <ToggleButton fx:id="aeroport" mnemonicParsing="false" onAction="#loadData" text="Aéroport" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                  <ToggleButton fx:id="donnee" mnemonicParsing="false" onAction="#loadData" text="Données" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <ToolBar prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #18161B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Button id="donneesBrutes" fx:id="donneesBrutes" mnemonicParsing="false" text="Données brutes">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Button id="visualisation" fx:id="visualisation" mnemonicParsing="false" onAction="#goToVisualisation" text="Visualisation des données">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Pane stylesheets="@base.css" HBox.hgrow="ALWAYS" />
+            <MenuButton fx:id="compte" mnemonicParsing="false" style="-fx-text-fill: white;" text="Compte">
+              <items>
+                <MenuItem fx:id="deconnexion" mnemonicParsing="false" onAction="#deconnexion" onMenuValidation="#deconnexion" text="Déconnexion" />
+                <MenuItem fx:id="chgtMDP" mnemonicParsing="false" onAction="#chgtMDP" onMenuValidation="#chgtMDP" text="Changer de mot de passe" />
+              </items>
+            </MenuButton>
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

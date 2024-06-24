@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="924.0" styleClass="root" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerHome">
+   <children>
+      <AnchorPane id="home-pane" layoutX="60.0" layoutY="52.0" prefHeight="568.0" prefWidth="807.0" style="-fx-background-color: #18161B;" stylesheets="@departement.css" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <ImageView fx:id="image" fitHeight="290.0" fitWidth="504.0" layoutX="271.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="150.0">
+               <image>
+                  <Image url="@saintmalo.jpg" />
+               </image>
+            </ImageView>
+            <ToggleButton fx:id="leftButton" layoutX="102.0" layoutY="260.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="41.0" prefWidth="39.0" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="259.0" />
+            <ToggleButton fx:id="rightButton" layoutX="668.0" layoutY="260.0" mnemonicParsing="false" onAction="#changeImage" prefHeight="41.0" prefWidth="39.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="259.0" />
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="1.0" layoutY="62.0" prefHeight="58.0" prefWidth="804.0" style="-fx-font-size: 40; -fx-font-weight: 700;" text="Accueil" textAlignment="CENTER" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="62.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="803.0" spacing="10" styleClass="toolbar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+               <children>
+                  <Button fx:id="button1" text="Button 1" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="button2" text="Button 2" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="button3" text="Button 3" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="button4" text="Button 4" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ToolBar layoutY="41.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #18161B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Button id="home-button" disable="true" mnemonicParsing="false" text="   ">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button id="connexion-button" alignment="TOP_LEFT" layoutX="807.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-background-color: #B4B4B4;" text="Connexion" />
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

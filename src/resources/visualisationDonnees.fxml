@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerVisualisation">
+   <children>
+      <AnchorPane id="visualisationPane" layoutX="-11.0" layoutY="52.0" prefHeight="498.0" prefWidth="800.0" style="-fx-background-color: #18161B;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <AnchorPane id="paneTable" fx:id="paneDonnee" layoutX="222.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="578.0" style="-fx-background-color: #aea8a8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="222.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="view" fitHeight="401.0" fitWidth="578.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <GridPane prefHeight="498.0" prefWidth="223.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="0.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="degres" mnemonicParsing="false" onAction="#loadView" prefHeight="30.0" prefWidth="201.0" text="Graphe degrés" />
+                  <Button fx:id="excentircite" mnemonicParsing="false" onAction="#loadView" prefHeight="30.0" prefWidth="201.0" text="Graphe excentricité" GridPane.rowIndex="1" />
+                  <Button fx:id="principales" mnemonicParsing="false" onAction="#loadView" text="Graphe commune principales" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="gare" mnemonicParsing="false" onAction="#loadView" prefHeight="30.0" prefWidth="203.0" text="Graphe gares" textAlignment="CENTER" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <ToolBar prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #18161B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Button fx:id="donneesBrutes" mnemonicParsing="false" onAction="#goToMain" text="Données brutes">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Button fx:id="visualisation" mnemonicParsing="false" text="Visualisation des données">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Pane stylesheets="@base.css" HBox.hgrow="ALWAYS" />
+            <MenuButton fx:id="compte" mnemonicParsing="false" style="-fx-text-fill: white;" text="Compte">
+               <items>
+                  <MenuItem fx:id="deconnexion" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
+                  <MenuItem fx:id="chgtMDP" mnemonicParsing="false" onAction="#chgtMDP" text="Changer de mot de passe" />
+               </items>
+            </MenuButton>
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

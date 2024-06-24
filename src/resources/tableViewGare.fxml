@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="gareTable" prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerTableGare">
+   <children>
+      <AnchorPane fx:id="actionBar" layoutX="-17.0" layoutY="-62.0" prefHeight="101.0" prefWidth="900.0" style="-fx-background-color: #535353;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="agrandir" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#agrandirEtRetour" id="retour" text="       " AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="export" layoutX="734.0" layoutY="9.0" mnemonicParsing="false" onAction="#exportToCSV" text="Exporter en CSV" />
+            <TextField fx:id="searchBar" layoutX="226.0" layoutY="9.0" prefHeight="39.0" prefWidth="471.0" />
+            <Label layoutX="116.0" layoutY="15.0" text="Rechercher :" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <GridPane layoutX="29.0" layoutY="58.0" prefHeight="542.0" prefWidth="906.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="765.0" minWidth="10.0" prefWidth="626.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="444.0" minWidth="10.0" prefWidth="274.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <SplitPane dividerPositions="0.6614699331848553" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableGare" prefHeight="600.0" prefWidth="635.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="idGareTableColumn" prefWidth="108.0" text="Code gare" />
+                        <TableColumn fx:id="nomGareTableColumn" prefWidth="130.0" text="Nom gare" />
+                        <TableColumn fx:id="fretTableColumn" prefWidth="72.0" text="Frêt" />
+                        <TableColumn fx:id="voyageurTableColumn" prefWidth="93.0" text="Voyageur" />
+                        <TableColumn fx:id="communeTableColumn" prefWidth="222.0" text="Commune" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane id="actionGrid" fx:id="gridAction" prefHeight="567.0" prefWidth="273.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="codeAjout" prefHeight="39.0" prefWidth="236.0" visible="false" GridPane.rowIndex="2">
+                           <opaqueInsets>
+                              <Insets right="30.0" />
+                           </opaqueInsets>
+                        </TextField>
+                        <TextField fx:id="nomAjout" visible="false" GridPane.rowIndex="4" />
+                        <TextField fx:id="communeAjout" visible="false" GridPane.rowIndex="7" />
+                        <Label fx:id="codeGareLabel" text="Code Gare" visible="false" GridPane.rowIndex="1" />
+                        <Label fx:id="nomLabel" text="Nom" visible="false" GridPane.rowIndex="3" />
+                        <Label fx:id="idCommuneLabel" text="ID Commune" visible="false" GridPane.rowIndex="6" />
+                        <Button fx:id="ajouter" mnemonicParsing="false" onAction="#handleModifyAction" prefHeight="39.0" prefWidth="130.0" text="Ajouter" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <GridPane GridPane.rowIndex="5">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="fretAjout" mnemonicParsing="false" text="Frêt" visible="false" />
+                              <RadioButton fx:id="voyageurAjout" mnemonicParsing="false" text="Voyageur" visible="false" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Text fx:id="actionTarget" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="8" />
+                        <Button fx:id="update" disable="true" mnemonicParsing="false" onAction="#handleModifyAction" prefHeight="39.0" prefWidth="130.0" text="Mettre à jour" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Button fx:id="supprimer" disable="true" mnemonicParsing="false" onAction="#handleDeleteAction" prefHeight="39.0" prefWidth="130.0" text="Supprimer" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Button fx:id="retourModif" mnemonicParsing="false" onAction="#retourModif" text="Retour" visible="false" />
+                        <Button fx:id="ajouter1" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="130.0" text="Ajouter" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <Button fx:id="update1" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="39.0" prefWidth="130.0" text="Mettre à jour" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

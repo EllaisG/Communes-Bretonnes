@@ -1,0 +1,157 @@
+*{
+    -fx-border : 0;
+}
+
+.root {
+   -fx-background-image: url("background.jpg");
+   -fx-background-size: cover;
+   -fx-background-repeat: no-repeat;
+}
+
+.button {
+    -fx-background-color: #2A3E7B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+    -fx-border-radius: 20px; /* Coins arrondis */
+    -fx-background-radius: 20px; /* Coins arrondis du fond */
+
+}
+.menu-button {
+    -fx-background-color: #2A3E7B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-border-radius: 20px; /* Coins arrondis */
+    -fx-background-radius: 20px; /* Coins arrondis du fond */
+
+}
+
+.menu-button .label {
+    -fx-text-fill: white; /* Texte blanc */
+}
+
+.menu-item {
+    -fx-background-color: #2A3E7B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+}
+
+.menu-item:hover {
+    -fx-background-color: #1F2C5C; /* Bleu plus foncé pour le survol */
+}
+
+.menu-item:selected {
+    -fx-background-color: #162044; /* Bleu encore plus foncé pour la sélection */
+}
+
+.button:hover {
+    -fx-background-color: #1c6691; /* Bleu plus foncé au survol */
+}
+
+.button:pressed {
+    -fx-background-color: #2980b9; /* Bleu encore plus foncé quand pressé */
+}
+
+
+
+.toggle-button {
+    -fx-background-color: #2A3E7B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+
+}
+
+.toggle-button:hover {
+    -fx-background-color: #1c6691; /* Bleu plus foncé au survol */
+}
+
+
+#actionGrid {
+    -fx-background-color : #aea8a8;
+    -fx-border-color : #535353;
+}
+
+/* Style pour les boutons dans le panneau actionGrid */
+#actionGrid .button {
+    -fx-background-color: #44568B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-background-radius: 5px; /* Coins arrondis du fond */
+}
+
+#actionGrid .button:hover {
+    -fx-background-color: #1c6691; /* Bleu plus foncé au survol */
+}
+
+
+#modifEnCours{
+    -fx-background-color : white;
+}
+
+#modifEnCours .button {
+    -fx-background-color: #44568B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+    -fx-border-radius: 20px; /* Coins arrondis */
+    -fx-background-radius: 20px; /* Coins arrondis du fond */
+}
+
+
+
+#actionGrid .button:pressed {
+    -fx-background-color: #2A3E7B; /* Bleu encore plus foncé quand pressé */
+}
+
+/* Style pour les boutons dans le panneau actionBar */
+#actionBar .button {
+    -fx-background-color: #44568B; 
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-background-radius: 5px; /* Coins arrondis du fond */
+}
+
+#actionBar .button:hover {
+    -fx-background-color: #1c6691; /* Vert plus foncé au survol */
+}
+
+#actionBar .button:pressed {
+    -fx-background-color: #2A3E7B; /* Vert encore plus foncé quand pressé */
+}
+
+#pageActive {
+    -fx-background-color: #1c6691;
+}
+
+#visualisationPane .button{
+    -fx-background-color: #2A3E7B; /* Bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-size: 14px; /* Taille du texte */
+    -fx-padding: 5 10 5 10; /* Espacement intérieur */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    -fx-background-radius: 5px; /* Coins arrondis du fond */
+
+}
+
+#visualisationPane .button{
+    -fx-background-color: #1c6691; /* Bleu plus foncé au survol */
+}
+
+
+#retour {
+    
+    -fx-background-image: url("agrandir.png");
+    -fx-background-size: 70% 70%; /* Ajustez la taille de l'image */
+    -fx-background-position: center center; /* Centre l'image */
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 0 0 0 0;
+}
+
+
+

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="donneeAnnuelleTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerTableDonneeAnnuelle">
+   <children>
+      <AnchorPane fx:id="actionBar" layoutX="-17.0" layoutY="-62.0" prefHeight="101.0" prefWidth="900.0" style="-fx-background-color: #535353;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="agrandir" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#agrandirEtRetour" id="retour" text="       " AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="export" layoutX="734.0" layoutY="9.0" mnemonicParsing="false" onAction="#exportToCSV" text="Exporter en CSV" AnchorPane.bottomAnchor="55.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="searchBar" layoutX="226.0" layoutY="9.0" prefHeight="39.0" prefWidth="471.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="10.0" />
+            <Label layoutX="116.0" layoutY="15.0" text="Rechercher :" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <SplitPane dividerPositions="0.7104677060133631" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: #aea8a8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <TableView fx:id="tableDonneesAnnuelles" prefHeight="538.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="anneeTableColumn" prefWidth="97.0" text="Année" />
+                                    <TableColumn fx:id="communeTableColumn" minWidth="0.0" prefWidth="99.0" text="Commune" />
+                                    <TableColumn fx:id="maisonTableColumn" minWidth="0.0" prefWidth="101.0" text="Maisons" />
+                                    <TableColumn fx:id="appartTableColumn" minWidth="5.0" prefWidth="132.0" text="Appartements" />
+                                    <TableColumn fx:id="prixMoyTableColumn" minWidth="0.0" prefWidth="124.0" text="Prix Moyen" />
+                                    <TableColumn fx:id="prixMoyM2TableColumn" minWidth="0.0" prefWidth="141.0" text="Prix moyen m2" />
+                                    <TableColumn fx:id="surfaceTableColumn" minWidth="0.0" prefWidth="162.0" text="Surface moyenne" />
+                                    <TableColumn fx:id="depCultTableColumn" prefWidth="196.0" text="Dépenses culturelles" />
+                                    <TableColumn fx:id="budgetTableColumn" prefWidth="145.0" text="Budget total" />
+                                    <TableColumn fx:id="populationTableColumn" maxWidth="6000.0" prefWidth="202.0" text="Population" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane id="actionGrid" fx:id="gridAction" prefHeight="567.0" prefWidth="273.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="ajouter" mnemonicParsing="false" onAction="#handleModifyAction" prefHeight="39.0" prefWidth="130.0" text="Ajouter" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <Button fx:id="update" disable="true" mnemonicParsing="false" onAction="#handleModifyAction" prefHeight="39.0" prefWidth="130.0" text="Mettre à jour" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Button fx:id="supprimer" disable="true" mnemonicParsing="false" onAction="#handleDeleteAction" prefHeight="39.0" prefWidth="130.0" text="Supprimer" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label fx:id="actionTarget1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+                  <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1100.0" prefWidth="272.0">
+                           <children>
+                              <GridPane layoutX="31.0" layoutY="147.0" prefHeight="159.0" prefWidth="274.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="anneeLabel" text="Année" GridPane.rowIndex="1" />
+                                    <Label fx:id="communeLabel" text="Commune" GridPane.rowIndex="3" />
+                                    <Label fx:id="maisonLabel" text="Nombre de maison" GridPane.rowIndex="5" />
+                                    <Label fx:id="appartementLabel" text="Nombre d'appartement" GridPane.rowIndex="7" />
+                                    <Label fx:id="prixMoyenLabel" text="Prix moyen" GridPane.rowIndex="9" />
+                                    <Label fx:id="prixMoyenM2Label" text="Prix moyen du m2" GridPane.rowIndex="11" />
+                                    <Label fx:id="surfaceMoyenneLabel" text="Surface moyenne" GridPane.rowIndex="13" />
+                                    <Label fx:id="depCultLabel" text="Dépense culturelle totale" GridPane.rowIndex="15" />
+                                    <Label fx:id="budgetTotLabel" layoutX="20.0" layoutY="645.0" text="Budget total" GridPane.rowIndex="17" />
+                                    <Label fx:id="populationLabel" layoutX="20.0" layoutY="741.0" text="Population totale" GridPane.rowIndex="19" />
+                                    <Label fx:id="actionTarget" layoutX="20.0" layoutY="645.0" GridPane.rowIndex="21" />
+                                    <Button fx:id="retour1" mnemonicParsing="false" onAction="#retourModif" text="Retour" />
+                                    <Button fx:id="ajouter1" mnemonicParsing="false" onAction="#handleAddAction" text="Ajouter" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="22" />
+                                    <Button fx:id="modifier1" mnemonicParsing="false" onAction="#handleUpdateAction" text="Mettre à jour" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="22" />
+                                    <TextField fx:id="annee" GridPane.rowIndex="2" />
+                                    <TextField fx:id="commune" GridPane.rowIndex="4" />
+                                    <TextField fx:id="maison" GridPane.rowIndex="6" />
+                                    <TextField fx:id="appartement" GridPane.rowIndex="8" />
+                                    <TextField fx:id="prixMoyen" GridPane.rowIndex="10" />
+                                    <TextField fx:id="prixMoyenM2" layoutX="20.0" layoutY="111.0" GridPane.rowIndex="12" />
+                                    <TextField fx:id="surfaceMoyenne" layoutX="20.0" layoutY="207.0" GridPane.rowIndex="14" />
+                                    <TextField fx:id="depCult" layoutX="20.0" layoutY="303.0" GridPane.rowIndex="16" />
+                                    <TextField fx:id="budgetTot" layoutX="20.0" layoutY="399.0" GridPane.rowIndex="18" />
+                                    <TextField fx:id="population" layoutX="20.0" layoutY="15.0" GridPane.rowIndex="20" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

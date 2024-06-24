@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="inscriptionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerInscription">
+   <children>
+      <AnchorPane layoutX="60.0" layoutY="90.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #18161B;" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
+         <children>
+           <GridPane prefHeight="486.0" prefWidth="473.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FFFFFF; -fx-font-weight: 700; -fx-font-size: 21;" text="IDENTIFIANT" wrappingWidth="302.0" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <TextField fx:id="userName" minHeight="-Infinity" prefHeight="39.0" prefWidth="260.0" style="-fx-font-size: 17;" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FFFFFF; -fx-font-weight: 700; -fx-font-size: 21;" text="MOT DE PASSE" wrappingWidth="302.0" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin></Text>
+                        <PasswordField fx:id="password" minHeight="-Infinity" prefHeight="39.0" style="-fx-font-size: 17;" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </GridPane.margin>
+                        </PasswordField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FFFFFF; -fx-font-size: 40; -fx-font-weight: 700;" text="Créer un nouveau compte" textAlignment="CENTER" wrappingWidth="494.75" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Button fx:id="inscription" mnemonicParsing="false" onAction="#inscription" prefHeight="44.0" prefWidth="154.0" style="-fx-background-radius: 0; -fx-background-color: #B4B4B4; -fx-font-weight: 700; -fx-font-size: 20; -fx-text-fill: black;" text="S'inscrire" GridPane.rowIndex="10" />
+                        <Text fx:id="actionTarget" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 17;" text="    " textAlignment="CENTER" wrappingWidth="362.5" GridPane.rowIndex="9" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FFFFFF; -fx-font-weight: 700; -fx-font-size: 21;" text="CONFIRMATION MOT DE PASSE" wrappingWidth="370.75" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="password1" minHeight="-Infinity" prefHeight="39.0" prefWidth="358.0" style="-fx-font-size: 17;" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </GridPane.margin>
+                  </PasswordField>
+                  <Hyperlink fx:id="connexionLien" onAction="#goToConnexion" style="-fx-text-fill: white; -fx-font-size: 20;" text="Vous êtes déjà inscrit ? Connectez-vous ici." underline="true" GridPane.rowIndex="2" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="49.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="180.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="50.75" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="86.5" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
